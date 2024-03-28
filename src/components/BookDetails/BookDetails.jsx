@@ -20,16 +20,25 @@ const BookDetails = () => {
 
   const readHandler = (f) => {
     readBooks(idInt);
-    toast("Read add book successfully")
-    let isExist = books.find((book) => book.bookId === f.idInt);
-    if (isExist){
-      toast("already added")
+    // toast("Read add book successfully")
+    let isExist = books.find((book) => book.bookId === idInt);
+    if (!isExist){
+      toast("Read add book successfully")
+      }else{
+      toast.error("Already added read book")
       }
     
     };
   const wishHandler = (F) => {
     WishBook(idInt);
-    toast("wishlist add book successfully");}
+    let isExist = books.find((book) => book.bookId === idInt);
+    if (!isExist){
+      toast("Wish list add book successfully")
+      }else{
+      toast.error("Already added wish list")
+      }
+    
+    }
 
     // let isExist = books.find((book) => book.bookId === f.idInt);
     // if (!isExist){
@@ -48,7 +57,7 @@ const BookDetails = () => {
           <img src={book.image} className="m-auto p-10" />
         </div>
         <div>
-          <h1 className="py-2 lg:text-[40px] font-bold">{book.bookName}</h1>
+          <h1 className="py-2 lg:text-[40px] text-2xl font-bold">{book.bookName}</h1>
           <p className="py-2 text-xl font-medium">By :{book.author}</p>
           <p className="border-y-2  border-[#e5dddd] solid py-2 text-xl font-medium">
             {book.category[0]}
@@ -89,7 +98,7 @@ const BookDetails = () => {
             </button></Link> */}
           
             <button
-              className="border-2 py-4 px-6 border-[#c0b1b1] rounded-lg mr-6 font-bold"
+              className="border-2 py-4 px-6 border-[#c0b1b1] rounded-lg mr-6 font-bold hover:bg-[#53eb67]"
               onClick={readHandler}
             >
               Read
