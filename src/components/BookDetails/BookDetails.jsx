@@ -3,6 +3,8 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { readBooks } from "../../utility/localstroage";
+import { WishBook } from "../../utility/localstroage";
+
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -18,7 +20,16 @@ const BookDetails = () => {
 
   const readHandler = (f) => {
     readBooks(idInt);
-    toast("Read book successfully");
+    toast("Read add book successfully")
+    let isExist = books.find((book) => book.bookId === f.idInt);
+    if (isExist){
+      toast("already added")
+      }
+    
+    };
+  const wishHandler = (F) => {
+    WishBook(idInt);
+    toast("wishlist add book successfully");}
 
     // let isExist = books.find((book) => book.bookId === f.idInt);
     // if (!isExist){
@@ -29,7 +40,7 @@ const BookDetails = () => {
     //     alert("Book already read");
     //      isExist = false;
     //   }
-  };
+  
   return (
     <div className="lg:max-w-6xl mx-auto mt-4 overflow-y-hidden">
       <div className="grid lg:grid-cols-2 gap-6 min-h-[calc(100vh-300px)]">
@@ -83,7 +94,7 @@ const BookDetails = () => {
             >
               Read
             </button>
-            <button className="border-2 py-4 px-6 border-[#c0b1b1] rounded-lg font-bold text-white bg-[#50B1C9]">
+            <button className="border-2 py-4 px-6 border-[#c0b1b1] rounded-lg font-bold text-white bg-[#50B1C9]" onClick={wishHandler}>
               Wishlist
             </button>
           </div>

@@ -15,4 +15,21 @@ localStorage.setItem('read-books', JSON.stringify(storedReadBooks));
 
 }
 };
-export { readBooks, getStoredReadBooks}
+const getStoredWishBooks = () => {
+    const storedWishBooks = localStorage.getItem('wish-books');
+    if (storedWishBooks) {
+    return JSON.parse(storedWishBooks);
+    }
+    return [];
+    
+    };
+    const WishBook =wishId => {
+        const storedWishBooks = getStoredWishBooks();
+        const exists = storedWishBooks.find(wishsId => wishsId === wishId);
+        if (!exists){
+        storedWishBooks.push(wishId);
+        localStorage.setItem('wish-books', JSON.stringify(storedWishBooks));
+        
+        }
+        };
+export { readBooks, getStoredReadBooks, getStoredWishBooks, WishBook}
