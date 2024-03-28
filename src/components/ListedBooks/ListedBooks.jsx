@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { NavLink, useLoaderData, useParams } from "react-router-dom";
+import { NavLink, useLoaderData, useParams, Outlet } from "react-router-dom";
 import { getStoredReadBooks } from "../../utility/localstroage";
 import BookRead from './../BookRead/BookRead';
 import { CiBookmark } from "react-icons/ci";
 import { ToastContainer, toast } from "react-toastify";
+import PageRead from "../PagesRead/PageRead";
 
 
-const ListedBooks = () => {
+const ListedBooks = ({bok}) => {
   
     const [read, setRead] = useState([]);
   const [listRead, setListRead] = useState([]);
@@ -45,11 +46,13 @@ const ListedBooks = () => {
   
 </div>
       </div>
+      <Outlet></Outlet>
       <div className="m-4">
       {
       
       // listRead.map(book => <li key={book.bookId}><span>{book.bookName}</span></li>)
       listRead.map((book) =>(<BookRead key={book.bookId} bookName={book}></BookRead>))
+      
       
       }
       

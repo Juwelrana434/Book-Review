@@ -23,16 +23,16 @@ const BookDetails = () => {
     // toast("Read add book successfully")
     let isExist = books.find((book) => book.bookId === idInt);
     if (!isExist){
-      toast("Read add book successfully")
-      }else{
       toast.error("Already added read book")
+      }else{
+      toast("Read add book successfully")
       }
     
     };
   const wishHandler = (F) => {
     WishBook(idInt);
     let isExist = books.find((book) => book.bookId === idInt);
-    if (!isExist){
+    if (isExist){
       toast("Wish list add book successfully")
       }else{
       toast.error("Already added wish list")
