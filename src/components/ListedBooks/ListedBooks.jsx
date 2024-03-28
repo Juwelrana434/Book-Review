@@ -38,12 +38,19 @@ const ListedBooks = () => {
       <div className="flex border-b-2 pb-1 max-w-6xl mx-auto">
       <button className="tab-active mr-4 flex"><NavLink className={({isActive }) => isActive ? 'text-[#0b0b0b] border border-[#0b0b0b]' : ' text-black'} to='/read'> <CiBookmark  className="inline-block"/>Read Book</NavLink></button>
     <li className="list-none"><NavLink className={({isActive }) => isActive ? 'text-[#0b0b0b] border border-[#0b0b0b]' : ' text-black'} to='/wish'>Wishlist Books</NavLink></li>
+    {/* tab add */}
+    <div role="tablist" className="tabs tabs-lifted">
+  <a role="tab" className="tab"><NavLink className={({isActive }) => isActive ? '' : ' text-black'} to='/ListedBooks'> <CiBookmark  className="inline-block"/>Read Book</NavLink></a>
+  <a role="tab" className="tab tab-active"><NavLink className={({isActive }) => isActive ? 'text-[#0b0b0b] border border-[#0b0b0b]' : ' text-black'} to='/wish'>Wishlist Books</NavLink></a>
+  
+</div>
       </div>
       <div className="m-4">
       {
       
       // listRead.map(book => <li key={book.bookId}><span>{book.bookName}</span></li>)
-      listRead.map((book) =>(<BookRead bookName={book}></BookRead>))
+      listRead.map((book) =>(<BookRead key={book.bookId} bookName={book}></BookRead>))
+      
       }
       
       

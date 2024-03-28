@@ -70,7 +70,7 @@ const WishBooks = () => {
      </div>)
      
       }
-      <h1>my name</h1>
+    
     </div>
   );
 };
