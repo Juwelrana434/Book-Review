@@ -1,9 +1,10 @@
 
+import ListedBooks from './../ListedBooks/ListedBooks';
 
 const PageRead = () => {
     return (
         <div>
-            <h1>pages to read</h1>
+            <ListedBooks></ListedBooks>
         </div>
     );
 };

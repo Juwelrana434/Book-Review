@@ -4,8 +4,8 @@ const Navbar = () => {
     const links = <>
     <li className="text-[18px]"><NavLink className={({isActive }) => isActive ? 'text-[#46f555] font-bold border border-[#46f555]' : 'font-bold text-black'} to='/'>Home</NavLink></li>
     <li className="text-[18px]"><NavLink className={({isActive }) => isActive ? 'text-[#46f555] font-bold border border-[#46f555]' : 'font-bold text-black'} to='/ListedBooks'>Listed Books</NavLink></li>
-    <li className="text-[18px]"><NavLink className={({isActive }) => isActive ? 'text-[#46f555] font-bold border border-[#46f555]' : 'font-bold text-black'} to='/PagesToRead'>Pages to Read </NavLink></li>
-    <li className="text-[18px]"><NavLink className={({isActive }) => isActive ? 'text-[#46f555] font-bold border border-[#46f555]' : 'font-bold text-black'} to='/Pa'>Up Coming book  </NavLink></li>
+    <li className="text-[18px]"><NavLink className={({isActive }) => isActive ? 'text-[#46f555] font-bold border border-[#46f555]' : 'font-bold text-black'} to='/read'>Pages to Read </NavLink></li>
+    <li className="text-[18px]"><NavLink className={({isActive }) => isActive ? 'text-[#46f555] font-bold border border-[#46f555]' : 'font-bold text-black'} to='/ListedBoo'>Up Coming book  </NavLink></li>
     <li className="text-[18px]"><NavLink className={({isActive }) => isActive ? 'text-[#46f555] font-bold border border-[#46f555]' : 'font-bold text-black'} to='/Listed'>Popular Book </NavLink></li>
     </>
     return (
